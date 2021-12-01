@@ -1,0 +1,17 @@
+{
+  "name": "ra-data-swapi",
+  "version": "1.0.0",
+  "description": "react-admin REST data provider for the Star Wars API (SWAPI)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-admin",
+    "reactjs",
+    "rest"
+  ],
+  "author": "Jeremy Richardson",
+  "license": "MIT", 
+  "peerDependencies": {"ra-core": "^3.17.2"}
+}
