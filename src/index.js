@@ -39,27 +39,24 @@ const swapiDataProvider = (apiUrl, httpClient = fetchUtils.fetchJson) => ({
 
 const urlToId = (url) => parseInt(url.match(/([^/]*)\/*$/)[1]);
 
+// Need to format some data to work with react-admin
 const formatSWAPIData = (resource, record) => {
-  let data;
-
-  if (resource === "people") {
-    data = {
-      ...record,
-      id: urlToId(record.url),
-      homeworld: urlToId(record.homeworld),
-      films: record.films.map((film) => urlToId(film)),
-      species: record.species.map((specie) => urlToId(specie)),
-    };
+  switch (resource) {
+    case "people":
+      return {
+        ...record,
+        id: urlToId(record.url),
+        homeworld: urlToId(record.homeworld),
+        films: record.films.map((film) => urlToId(film)),
+        species: record.species.map((specie) => urlToId(specie)),
+      };
+    case "planets":
+      return {
+        ...record,
+        id: urlToId(record.url),
+        films: record.films.map((film) => urlToId(film)),
+      };
   }
-  if (resource === "planets") {
-    data = {
-      ...record,
-      id: urlToId(record.url),
-      films: record.films.map((film) => urlToId(film)),
-    };
-  }
-
-  return data;
 };
 
 export default swapiDataProvider;
