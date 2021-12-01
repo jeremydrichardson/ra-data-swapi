@@ -12,6 +12,11 @@
     "rest"
   ],
   "author": "Jeremy Richardson",
-  "license": "MIT", 
-  "peerDependencies": {"ra-core": "^3.17.2"}
+  "license": "MIT",
+  "peerDependencies": {
+    "ra-core": "^3.17.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.0"
+  }
 }
